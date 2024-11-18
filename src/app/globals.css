@@ -2,20 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #faf8ef;
+  font-family: 'Georgia', serif;
+  color: #2e2e2e;
+}
+
+.news-card {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.news-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.news-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+.news-source {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.news-description {
+  text-align: justify;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.news-link {
+  text-decoration: underline;
+  color: #1a0dab;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.news-link:hover {
+  color: #c70039;
 }
