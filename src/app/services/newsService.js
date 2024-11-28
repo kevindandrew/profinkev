@@ -16,18 +16,17 @@ export const fetchNews = async (category, query, filters, source) => {
 
   try {
     const response = await fetch(url);
-    const data = await response.json();
-
-    if (response.status !== 200) {
-      throw new Error(data.message || 'Error al cargar las noticias');
+    if (!response.ok) {
+      throw new Error(`HTTP Error ${response.status}: ${response.statusText}`);
     }
-
+    const data = await response.json();
     return data.articles || [];
   } catch (error) {
     console.error('Error en la solicitud a la API:', error);
     return [];
   }
 };
+
 
 export const fetchCategories = async () => {
   return ['general', 'technology', 'sports', 'entertainment', 'health', 'science', 'business'];
